@@ -1,0 +1,25 @@
+# Nome da aplicação
+spring:
+  application:
+    name: Cambio
+
+  # URL de conexão com o banco de dados (Banco específico para o Cambio Service)
+  datasource:
+    url: jdbc:mysql://localhost:3306/cambio_service?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+
+  # Configurações do Hibernate
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+# Definir porta para 8000
+server:
+  port: 8000
+  
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
